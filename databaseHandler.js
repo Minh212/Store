@@ -1,4 +1,4 @@
-const {ObjectId,MongoClient} = require('mongodb');
+const { ObjectId, MongoClient } = require('mongodb');
 const url = 'mongodb+srv://hominh:minh212212@cluster0.xmrhr.mongodb.net/test';
 
 async function getDB() {
@@ -16,4 +16,4 @@ async function deleteProduct(id) {
     const dbo = await getDB();
     await dbo.collection("products").deleteOne({ "_id": ObjectId(id) });
 }
-module.exports = {getDB,insertProduct,deleteProduct}
+module.exports = { getDB, insertProduct, deleteProduct }
