@@ -16,6 +16,10 @@ app.post('/insert', async (req, res) => {
     const amountInput = req.body.txtAmount;
     const newProduct = { name: nameInput, price: priceInput, amount: amountInput }
 
+    if(nameInput.length < 4){
+        res.render("add", {errorMsg: 'ten nho hon 4 ky tu'})
+    }
+
     await insertProduct(newProduct);
     res.redirect("/");
 })
