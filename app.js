@@ -16,9 +16,6 @@ app.post('/insert', async (req, res) => {
     const amountInput = req.body.txtAmount;
     const newProduct = { name: nameInput, price: priceInput, amount: amountInput }
 
-
-    
-    
     await insertProduct(newProduct);
     res.redirect("/");
 })
